@@ -4,10 +4,10 @@ import { debounceTime } from "rxjs";
 
 
 @Component({
-    selector: 'Formulario',
+    selector: 'formulario',
     templateUrl: './formulario.component.html',
 })
-export class InicioComponent implements OnInit {
+export class InicioFormulario implements OnInit {
     form!: FormGroup;
 
     constructor(
@@ -36,8 +36,6 @@ export class InicioComponent implements OnInit {
             console.log(value);
         }
     }
-
-
 
 
 }
