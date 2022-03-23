@@ -8,9 +8,10 @@ import { debounceTime } from "rxjs";
     templateUrl: './formulario.component.html',
 })
 export class InicioFormulario implements OnInit {
-    form!: FormGroup;
-
+    form: FormGroup
+    
     constructor(
+
         private formBuilder: FormBuilder
     ) {
         this.buildForm();
@@ -31,12 +32,11 @@ export class InicioFormulario implements OnInit {
 
     save(event: Event) {
         event.preventDefault();
-        if(this.form.valid){
-            const value = this.form.value;
-            console.log(value);
-        }
-    }
-
+        if (this.form.valid) {
+          const value = this.form.value;
+          console.log(value);
+        } 
+      }
 
 }
 

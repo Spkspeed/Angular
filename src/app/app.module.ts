@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { InicioFormulario } from './components/formulario-componente/formulario.component';
+import { InicioFormulario } from './components/formulario.component.ts/formulario.component';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { InicioFormulario } from './components/formulario-componente/formulario.
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
