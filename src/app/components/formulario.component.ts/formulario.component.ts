@@ -9,7 +9,7 @@ import { debounceTime } from "rxjs";
 })
 export class InicioFormulario implements OnInit {
     form: FormGroup
-    
+
     constructor(
 
         private formBuilder: FormBuilder
@@ -21,22 +21,29 @@ export class InicioFormulario implements OnInit {
 
     private buildForm() {
         this.form = this.formBuilder.group({
-            name: ['',  [Validators.required]],
+            name: ['', [Validators.required]],
             date: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
-            text: ['', [Validators.required, Validators.maxLength(200)]],
+            text: ['', [Validators.required, Validators.maxLength(80)]],
             category: ['', [Validators.required]],
             gender: ['', [Validators.required]],
-          });
+        });
     }
 
     save(event: Event) {
         event.preventDefault();
+        console.log('save');
         if (this.form.valid) {
-          const value = this.form.value;
-          console.log(value);
-        } 
-      }
+            const value = this.form.value;
+            console.log(value);
+        } else[
+            this.form.markAllAsTouched(),
+        ]
+    }
+
+    doSomething() {
+        console.log('click');
+    }
 
 }
 
