@@ -2,10 +2,10 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Orden
+        Orden MAT
       </h1>
       <h2 class="subtitle">
-        
+        Completar las casillas por favor
       </h2>
     </div>
   </div>
@@ -14,33 +14,6 @@
   <section class="section">
     <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
       
-      <div class="field">
-        <label class="label">Codigo:</label>
-        <div class="control">
-          <textarea
-            class="input" 
-            [class.is-danger]="codigoFieldIsInvalid"
-            [class.is-success]="codigoFieldIsValid"
-            cols="1"
-            rows="1"
-            type="text"
-
-            formControlName="codigo"
-          ></textarea>
-        </div>
-        {{ form.get("codigo").errors | json }}
-      </div>
-      <div *ngIf="codigoFieldIsInvalid">
-        <p class="help is-danger" *ngIf="codigoField.hasError('required')">
-        Es un campo requerido
-        </p>
-        <p class="help is-danger">
-        Solo se permiten numeros
-        </p>
-      </div>
-      
-      
-
       <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
@@ -63,31 +36,364 @@
           </p>
         </div>
       </div>
+      
+      <div class="field">
+        <label class="label">Codigo:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="codigoFieldIsInvalid"
+            [class.is-success]="codigoFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
 
+            formControlName="codigo"
+          ></textarea>
+        </div>
+        {{ form.get("codigo").errors | json }}
+      </div>
+      <div *ngIf="codigoFieldIsInvalid">
+        <p class="help is-danger" *ngIf="codigoField.hasError('required')">
+        Es un campo requerido
+        </p>
+        <p class="help is-danger">
+        Solo se permiten numeros  
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="label">Codigo/Cliente:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="codigoFieldIsInvalid"
+            [class.is-success]="codigoFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="codigoCliente"
+          ></textarea>
+        </div>
+        {{ form.get("codigoCliente").errors | json }}
+      </div>
+      <div *ngIf="codigoClienteFieldIsInvalid">
+        <p class="help is-danger" *ngIf="codigoClienteField.hasError('required')">
+        Es un campo requerido
+        </p>
+        <p class="help is-danger">
+        Solo se permiten numeros
+        </p>
+      </div>
+      
+      <div class="field">
+        <label class="label">Contrato:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="contratoFieldIsInvalid"
+            [class.is-success]="contratoFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="contrato"
+          ></textarea>
+        </div>
+        {{ form.get("contrato").errors | json }}
+      </div>
+      <div *ngIf="contratoFieldIsInvalid">
+        <p class="help is-danger" *ngIf="contratoField.hasError('required')">
+        Es un campo requerido
+        </p>
+        <p class="help is-danger">
+        Solo se permiten numeros
+        </p>
+      </div>
+      
+
+      <div class="field">
+        <label class="label">Producto:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="productoFieldIsInvalid"
+            [class.is-success]="productoFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="producto"
+          ></textarea>
+        </div>
+        {{ form.get("producto").errors | json }}
+      </div>
+      <div *ngIf="productoFieldIsInvalid">
+        <p class="help is-danger" *ngIf="productoField.hasError('required')">
+        Es un campo requerido
+        </p>
+      </div>
 
 
       <div class="field">
-        <label class="label">Texto largo:</label>
+        <label class="label">Puerto:</label>
         <div class="control">
-          <textarea
-            class="textarea"
-            cols="30"
-            rows="10"
-            formControlName="text"
-          ></textarea>
-          {{ form.get("text").value.length }}/80
+          <div class="select">
+            <select formControlName="categoryPuerto">
+              <option value="1">ROSARIO</option>
+              <option value="2">TIGRE</option>
+              <option value="3">PINAMAR</option>
+            </select>
+          </div>
         </div>
       </div>
 
 
+      <div class="field">
+        <label class="label">Compra/Venta:</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="categoryCompraVenta">
+              <option value="1">COMPRA</option>
+              <option value="2">VENTA </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="field">
+        <label class="label">Toneladas/t:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="toneladasFieldIsInvalid"
+            [class.is-success]="toneladasFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="toneladas"
+          ></textarea>
+        </div>
+        {{ form.get("toneladas").errors | json }}
+      </div>
+      <div *ngIf="toneladasFieldIsInvalid">
+        <p class="help is-danger" *ngIf="toneladasField.hasError('required')">
+        Es un campo requerido
+        </p>
+        <p class="help is-danger">
+          Solo se permiten numeros
+          </p>
+      </div>
+
+
+
+      <div class="field">
+        <label class="label">Posicion:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="posicionFieldIsInvalid"
+            [class.is-success]="posicionFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="posicion"
+          ></textarea>
+        </div>
+        {{ form.get("posicion").errors | json }}
+      </div>
+      <div *ngIf="posicionFieldIsInvalid">
+        <p class="help is-danger" *ngIf="posicionField.hasError('required')">
+        Es un campo requerido
+        </p>
+      </div>
+
+
+      <div class="field">
+        <label class="label">Precio Base:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="precioBaseFieldIsInvalid"
+            [class.is-success]="precioBaseFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="precioBase"
+          ></textarea>
+        </div>
+        {{ form.get("precioBase").errors | json }}
+      </div>
+      <div *ngIf="precioBaseFieldIsInvalid">
+        <p class="help is-danger" *ngIf="precioBaseField.hasError('required')">
+        Es un campo requerido
+        </p>
+        <p class="help is-danger">
+          Solo se permiten numeros
+          </p>
+      </div>
+
+
+      <div class="field">
+        <label class="label">Precio de Ejercicio:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="precioDeEjercicioFieldIsInvalid"
+            [class.is-success]="precioDeEjercicioFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="precioDeEjercicio"
+          ></textarea>
+        </div>
+        {{ form.get("precioDeEjercicio").errors | json }}
+      </div>
+      <div *ngIf="precioDeEjercicioFieldIsInvalid">
+        <p class="help is-danger" *ngIf="precioDeEjercicioField.hasError('required')">
+        Es un campo requerido
+        </p>
+        <p class="help is-danger">
+          Solo se permiten numeros
+          </p>
+      </div>
+
+      <div class="field">
+        <label class="label">Prima:</label>
+        <div class="control">
+          <textarea
+            class="input" 
+            [class.is-danger]="primaFieldIsInvalid"
+            [class.is-success]="primaFieldIsValid"
+            cols="1"
+            rows="1"
+            type="text"
+
+            formControlName="prima"
+          ></textarea>
+        </div>
+        {{ form.get("prima").errors | json }}
+      </div>
+      <div *ngIf="primaFieldIsInvalid">
+        <p class="help is-danger" *ngIf="primaField.hasError('required')">
+        Es un campo requerido
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="label">Combinada:</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="categoryCombinada">
+              <option value="1">SI</option>
+              <option value="2">NO </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label class="label">Observaciones:</label>
+        <div class="control">
+          <textarea 
+          class="textarea" 
+          [class.is-danger]="observacionesFieldIsInvalid"
+          [class.is-success]="observacionesFieldIsValid"
+          cols="5" 
+          rows="5" 
+          formControlName="observaciones"></textarea>
+          {{ form.get('observaciones').value.length }}/150
+        </div>
+        {{ form.get("observaciones").errors | json }}
+
+        <div *ngIf="observacionesFieldIsInvalid">
+          <p class="help is-danger" *ngIf="form.get('observaciones').value.length > 150">
+            Superaste el maximo de caracteres permitidos.
+            </p>
+          <p class="help is-danger" *ngIf="observacionesField.hasError('required')">
+          Es un campo requerido
+          </p>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label class="label">Cancela:</label>
+        <div class="control">
+          <div class="select">
+            <select formControlName="categoryCancela">
+              <option value="1">SI</option>
+              <option value="2">NO </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+        <div class="field">
+          <label class="label">Liquida Registros:</label>
+          <div class="control">
+            <textarea 
+            class="textarea" 
+            cols="2" 
+            rows="2" 
+            formControlName="liquidaRegistros"></textarea>
+          </div>
+        </div>
+
+
+        <div class="field">
+          <label class="label">Oferta de Entrega:</label>
+          <div class="control">
+            <div class="select">
+              <select formControlName="categoryOfertaDeEntrega">
+                <option value="1">SI</option>
+                <option value="2">NO </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Procedencia:</label>
+          <div class="control">
+            <textarea 
+            class="textarea" 
+            cols="2" 
+            rows="2" 
+            formControlName="procedencia"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Realizado:</label>
+          <div class="control">
+            <div class="select">
+              <select formControlName="categoryRealizado">
+                <option value="1">SI</option>
+                <option value="2">NO </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-primary" type="submit">Guardar</button>
+          <button class="button is-primary"  type="submit" [disabled]="form.invalid">Guardar</button>
         </div>
         <div class="control">
           <button class="button is-light" type="reset">Cancelar</button>
         </div>
       </div>
+
     </form>
   </section>
 </div>
